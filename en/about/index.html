@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Home | Kur Med Alle</title>
+  <style media="screen">
+    * {
+      margin: 0;
+    }
+
+    body {
+      background: black;
+      font-family: arial;
+      transition: background .5s;
+      display: block;
+    }
+
+    header {
+      position: fixed;
+      z-index: 2;
+    }
+
+    header>div {
+      position: fixed;
+      cursor: pointer;
+    }
+
+    header>div#logo {
+      height: 50px;
+      width: 50px;
+      top: 25px;
+      left: 25px;
+    }
+
+    header>div#logo>img {
+      width: 100%;
+    }
+
+    header>div#togglemenu {
+      height: 30px;
+      width: 30px;
+      top: 35px;
+      left: 90px;
+    }
+
+    header>div#togglemenu>span {
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background: white;
+      transition: transform .3s, top .3s, background .5s;
+      top: 13.5px;
+    }
+
+    footer {
+      text-align: center;
+      margin: 50px 0 20px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    div#menu {
+      z-index: 1;
+      position: fixed;
+      display: block;
+      top: 0;
+      opacity: 0;
+      visibility: hidden;
+      background: black;
+      width: 100%;
+      height: calc(100vh - 100px);
+      color: white;
+      transition: opacity .5s, visibility 0s .5s;
+      padding: 100px 50px;
+      overflow-y: auto;
+    }
+
+    div#menu.activated {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .5s, visibility 0s 0s;
+    }
+
+    div#menu span {
+      transition: color .3s, opacity .3s 0s;
+      line-height: 4rem;
+      cursor: pointer;
+    }
+
+    div#menu span:hover {
+      color: #FCB626;
+    }
+
+    div#menu>span {
+      font-size: 2em;
+    }
+
+    div#menu > small:not(span) {
+      cursor: default;
+    }
+
+    section {
+      width: 70vw;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+
+
+    main>div:first-child {
+      color: white;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    main>div:first-child>h1 {
+      font-size: 5em;
+    }
+
+    main>div:first-child>p {
+      font-size: 1.5em;
+    }
+
+    main > div:first-child > span {
+      background: white;
+      width: 1px;
+      bottom: 0;
+      position: absolute;
+      animation: scroll 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      transition: opacity .5s;
+    }
+
+    @keyframes scroll {
+      5%{
+        top: 85vh;
+        height: 0vh;
+      }
+      50%{
+        top: 85vh;
+        height: 15vh;
+      }
+      95%{
+        top: 100vh;
+        height: 0vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="menu" onclick="menuswitch()">
+    <small><span onclick="jump('../')">JA</span> &nbsp;/&nbsp; <span style="opacity:.75">EN</span></small><br>
+    <span onclick="jump('about')">About</span><br>
+    <span onclick="jump('archives')">Archives</span><br>
+    <span onclick="jump('contact')">Contact</span>
+  </div>
+  <header>
+    <div onclick="scrolltotop()" id="logo">
+      <img src="logo.png" alt="">
+    </div>
+    <div id="togglemenu" onclick="menuswitch()">
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+
+  <main>
+    <div>
+      <h1>Kur Med Alle</h1>
+      <p><span style="color:#FCB626">Hygge</span> for digital detox.</p>
+      <span></span>
+    </div>
+    <section>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+      nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+      qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+      laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+      in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+      sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+      mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum
+      dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+      in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+      ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </section>
+  </main>
+
+
+  <footer>
+    &copy; 2021 Kur Med Alle
+  </footer>
+
+  <script type="text/javascript">
+    let menu = false;
+
+
+    function menuswitch() {
+      if (menu) {
+        document.querySelector('header > div > span:first-child').style.transform = "rotate(0)";
+        document.querySelector('header > div > span:last-child').style.transform = "rotate(0)";
+        document.body.style.overflow = "scroll";
+        document.querySelector('div#menu').className = "";
+        menu = false;
+        if (window.innerHeight * .55 < document.documentElement.scrollTop || document.body.scrollTop) {
+          document.querySelector('header > div > span:last-child').style.background = "black";
+        }
+      } else {
+        document.querySelector('header > div > span:first-child').style.transform = "rotate(45deg)";
+        document.querySelector('header > div > span:last-child').style.transform = "rotate(135deg)";
+        document.body.style.overflow = "hidden";
+        document.querySelector('div#menu').className = "activated";
+        menu = true;
+        document.querySelector('header > div > span:first-child').style.background = "white";
+        document.querySelector('header > div > span:last-child').style.background = "white";
+      }
+    }
+
+    function jump(link) {
+      document.body.style.background = "white";
+      document.querySelector('main').style.opacity = "0";
+      document.querySelector('header > div > span:first-child').style.background = "black";
+      document.querySelector('header > div > span:last-child').style.background = "black";
+      setTimeout(function() {
+        window.location.href = link;
+      }, 500);
+    }
+
+    function scrolltotop() {
+      if (menu) {
+        window.scrollTo(0,0);
+        setTimeout(function () {
+          menuswitch();
+        }, 200);
+      }else {
+        var position = document.documentElement.scrollTop || document.body.scrollTop,
+            i = 0,
+            interval = setInterval(function () {
+          if (i == 200) {
+            clearInterval(interval);
+          }
+          window.scrollTo(0,(position - position *(1 - Math.pow(1-(i/200),3))));
+          i++;
+        }, 1);
+      }
+    }
+
+
+    window.onscroll = function() {
+      document.querySelector('main > div:first-child > span').style.opacity = 0;
+      if (window.innerHeight * .57 < document.documentElement.scrollTop || document.body.scrollTop) {
+        document.body.style.background = "white";
+        document.querySelector('header > div > span:first-child').style.background = "black";
+        document.querySelector('header > div > span:last-child').style.background = "black";
+      } else {
+        document.body.style.background = "black";
+        document.querySelector('header > div > span:first-child').style.background = "white";
+        document.querySelector('header > div > span:last-child').style.background = "white";
+      }
+    }
+  </script>
+</body>
+
+</html>
