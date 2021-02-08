@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+body {
+  font-family: arial;
+  transition: background .5s;
+  display: block;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+}
+
+header>div {
+  position: fixed;
+  cursor: pointer;
+}
+
+header>div#logo {
+  height: 50px;
+  width: 50px;
+  top: 25px;
+  left: 25px;
+}
+
+header>div#logo>img {
+  width: 100%;
+}
+
+header>div#togglemenu {
+  height: 30px;
+  width: 30px;
+  top: 35px;
+}
+
+header>div#togglemenu>span {
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  transition: transform .3s, top .3s, background .5s, filter .3s, width .3s;
+}
+
+header>div#togglemenu>span:nth-child(1), header>div#togglemenu>span:nth-child(2) {
+  top: 13.5px;
+}
+
+header>div#togglemenu>span:nth-child(3) {
+  top: 1px;
+  right: 0;
+}
+
+header>div#togglemenu>span:nth-child(4) {
+  bottom: 1px;
+}
+
+header>div#togglemenu:hover >span {
+  background: #FCB626 !important;
+}
+
+footer {
+  text-align: center;
+  margin: 50px 0 20px 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+div#menu {
+  z-index: 1;
+  position: fixed;
+  display: block;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  background: black;
+  width: 100%;
+  height: calc(100vh - 100px);
+  color: white;
+  transition: opacity .5s, visibility 0s .5s;
+  padding: 100px 50px;
+  overflow-y: auto;
+
+}
+
+div#menu.activated {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .5s, visibility 0s 0s;
+}
+
+div#menu span {
+  transition: color .3s, opacity .3s 0s;
+  line-height: 4rem;
+  cursor: pointer;
+}
+
+div#menu span:hover {
+  color: #FCB626;
+}
+
+div#menu>span {
+  font-size: 2em;
+}
+
+div#menu > small:not(span) {
+  cursor: default;
+}
+
+section {
+  width: 70vw;
+  max-width: 1000px;
+  margin: auto;
+}
+
+@media screen and (max-width:480px) {
+  header>div#togglemenu {
+    right: 35px;
+  }
+
+  div#menu {
+    text-align: right;
+    right: 0;
+  }
+}
+
+@media screen and (min-width:481px) {
+  header>div#togglemenu {
+    left: 90px;
+  }
+}
