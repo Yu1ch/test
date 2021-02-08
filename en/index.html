@@ -7,7 +7,7 @@
   <meta name="keywords" content="hygge, internet addiction, digital detox, smartphone addiction, internet, smartphones, addiction">
   <meta name="description" content="Kur Med Alle is a website run by two high school students based in Japan, focusing on the Danish lifestyle Hygge as a cure to internet addiction.">
   <meta name="author" content="Kur Med Alle">
-  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="../common.css">
   <title>Home | Kur Med Alle</title>
   <style>
@@ -165,12 +165,24 @@
     }
 
     function jump(link) {
-      document.body.style.background = "white";
       document.querySelector('main').style.opacity = "0";
-      document.querySelector('header > div > span:nth-child(1)').style.background = "black";
-      document.querySelector('header > div > span:nth-child(2)').style.background = "black";
-      document.querySelector('header > div > span:nth-child(3)').style.background = "black";
-      document.querySelector('header > div > span:nth-child(4)').style.background = "black";
+      document.querySelector('footer').style.opacity = "0";
+      if (link == "../") {
+        document.body.style.transition = "none";
+        document.body.style.background = "black";
+        setTimeout(function () {
+          document.querySelector('header > div > span:nth-child(1)').style.background = "white";
+          document.querySelector('header > div > span:nth-child(2)').style.background = "white";
+          document.querySelector('header > div > span:nth-child(3)').style.background = "white";
+          document.querySelector('header > div > span:nth-child(4)').style.background = "white";
+        }, 10);
+      }else {
+        document.body.style.background = "white";
+        document.querySelector('header > div > span:nth-child(1)').style.background = "black";
+        document.querySelector('header > div > span:nth-child(2)').style.background = "black";
+        document.querySelector('header > div > span:nth-child(3)').style.background = "black";
+        document.querySelector('header > div > span:nth-child(4)').style.background = "black";
+      }
       setTimeout(function() {
         window.location.href = link;
       }, 500);
