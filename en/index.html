@@ -4,118 +4,20 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
+  <meta name="keywords" content="hygge, internet addiction, digital detox, smartphone addiction, internet, smartphones, addiction">
+  <meta name="description" content="Kur Med Alle is a website run by two high school students based in Japan, focusing on the Danish lifestyle Hygge as a cure to internet addiction.">
+  <meta name="author" content="Kur Med Alle">
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="stylesheet" href="../common.css">
   <title>Home | Kur Med Alle</title>
-  <style media="screen">
-    * {
-      margin: 0;
-    }
-    
-    ::-webkit-scrollbar {
-  width: 0;
-  display: none;
-}
-
+  <style>
     body {
       background: black;
-      font-family: arial;
-      transition: background .5s;
-      display: block;
-    }
-
-    header {
-      position: fixed;
-      z-index: 2;
-    }
-
-    header>div {
-      position: fixed;
-      cursor: pointer;
-    }
-
-    header>div#logo {
-      height: 50px;
-      width: 50px;
-      top: 25px;
-      left: 25px;
-    }
-
-    header>div#logo>img {
-      width: 100%;
-    }
-
-    header>div#togglemenu {
-      height: 30px;
-      width: 30px;
-      top: 35px;
-      left: 90px;
     }
 
     header>div#togglemenu>span {
-      position: absolute;
-      width: 30px;
-      height: 3px;
       background: white;
-      transition: transform .3s, top .3s, background .5s;
-      top: 13.5px;
     }
-
-    footer {
-      text-align: center;
-      margin: 50px 0 20px 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: white;
-    }
-
-    div#menu {
-      z-index: 1;
-      position: fixed;
-      display: block;
-      top: 0;
-      opacity: 0;
-      visibility: hidden;
-      background: black;
-      width: 100%;
-      height: calc(100vh - 100px);
-      color: white;
-      transition: opacity .5s, visibility 0s .5s;
-      padding: 100px 50px;
-      overflow-y: auto;
-    }
-
-    div#menu.activated {
-      opacity: 1;
-      visibility: visible;
-      transition: opacity .5s, visibility 0s 0s;
-    }
-
-    div#menu span {
-      transition: color .3s, opacity .3s 0s;
-      line-height: 4rem;
-      cursor: pointer;
-    }
-
-    div#menu span:hover {
-      color: #FCB626;
-    }
-
-    div#menu>span {
-      font-size: 2em;
-    }
-
-    div#menu > small:not(span) {
-      cursor: default;
-    }
-
-    section {
-      width: 70vw;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-
 
     main>div:first-child {
       color: white;
@@ -169,9 +71,11 @@
   </div>
   <header>
     <div onclick="scrolltotop()" id="logo">
-      <img src="logo.png" alt="">
+      <img src="../logo.png" alt="">
     </div>
     <div id="togglemenu" onclick="menuswitch()">
+      <span></span>
+      <span></span>
       <span></span>
       <span></span>
     </div>
@@ -223,40 +127,50 @@
   </main>
 
 
-  <footer>
+  <footer style="color: grey">
     &copy; 2021 Kur Med Alle
   </footer>
-
   <script type="text/javascript">
     let menu = false;
 
 
     function menuswitch() {
       if (menu) {
-        document.querySelector('header > div > span:first-child').style.transform = "rotate(0)";
-        document.querySelector('header > div > span:last-child').style.transform = "rotate(0)";
+        document.querySelector('header > div > span:nth-child(1)').style.transform = "rotate(0)";
+        document.querySelector('header > div > span:nth-child(2)').style.transform = "rotate(0)";
+        document.querySelector('header > div > span:nth-child(3)').style.width = "30px";
+        document.querySelector('header > div > span:nth-child(4)').style.width = "30px";
         document.body.style.overflow = "auto";
         document.querySelector('div#menu').className = "";
         menu = false;
         if (window.innerHeight * .55 < document.documentElement.scrollTop || document.body.scrollTop) {
-          document.querySelector('header > div > span:last-child').style.background = "black";
+          document.querySelector('header > div > span:nth-child(1)').style.background = "black";
+          document.querySelector('header > div > span:nth-child(2)').style.background = "black";
+          document.querySelector('header > div > span:nth-child(3)').style.background = "black";
+          document.querySelector('header > div > span:nth-child(4)').style.background = "black";
         }
       } else {
-        document.querySelector('header > div > span:first-child').style.transform = "rotate(45deg)";
-        document.querySelector('header > div > span:last-child').style.transform = "rotate(135deg)";
+        document.querySelector('header > div > span:nth-child(1)').style.transform = "rotate(45deg)";
+        document.querySelector('header > div > span:nth-child(2)').style.transform = "rotate(135deg)";
+        document.querySelector('header > div > span:nth-child(3)').style.width = "0";
+        document.querySelector('header > div > span:nth-child(4)').style.width = "0";
         document.body.style.overflow = "hidden";
         document.querySelector('div#menu').className = "activated";
         menu = true;
-        document.querySelector('header > div > span:first-child').style.background = "white";
-        document.querySelector('header > div > span:last-child').style.background = "white";
+        document.querySelector('header > div > span:nth-child(1)').style.background = "white";
+        document.querySelector('header > div > span:nth-child(2)').style.background = "white";
+        document.querySelector('header > div > span:nth-child(3)').style.background = "white";
+        document.querySelector('header > div > span:nth-child(4)').style.background = "white";
       }
     }
 
     function jump(link) {
       document.body.style.background = "white";
       document.querySelector('main').style.opacity = "0";
-      document.querySelector('header > div > span:first-child').style.background = "black";
-      document.querySelector('header > div > span:last-child').style.background = "black";
+      document.querySelector('header > div > span:nth-child(1)').style.background = "black";
+      document.querySelector('header > div > span:nth-child(2)').style.background = "black";
+      document.querySelector('header > div > span:nth-child(3)').style.background = "black";
+      document.querySelector('header > div > span:nth-child(4)').style.background = "black";
       setTimeout(function() {
         window.location.href = link;
       }, 500);
@@ -286,12 +200,16 @@
       document.querySelector('main > div:first-child > span').style.opacity = 0;
       if (window.innerHeight * .57 < document.documentElement.scrollTop || document.body.scrollTop) {
         document.body.style.background = "white";
-        document.querySelector('header > div > span:first-child').style.background = "black";
-        document.querySelector('header > div > span:last-child').style.background = "black";
+        document.querySelector('header > div > span:nth-child(1)').style.background = "black";
+        document.querySelector('header > div > span:nth-child(2)').style.background = "black";
+        document.querySelector('header > div > span:nth-child(3)').style.background = "black";
+        document.querySelector('header > div > span:nth-child(4)').style.background = "black";
       } else {
         document.body.style.background = "black";
-        document.querySelector('header > div > span:first-child').style.background = "white";
-        document.querySelector('header > div > span:last-child').style.background = "white";
+        document.querySelector('header > div > span:nth-child(1)').style.background = "white";
+        document.querySelector('header > div > span:nth-child(2)').style.background = "white";
+        document.querySelector('header > div > span:nth-child(3)').style.background = "white";
+        document.querySelector('header > div > span:nth-child(4)').style.background = "white";
       }
     }
   </script>
