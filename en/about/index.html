@@ -18,6 +18,7 @@
     main,
     footer {
       transition: opacity .5s;
+      opacity: 0;
     }
 
     header>div#togglemenu>span {
@@ -95,6 +96,10 @@
   <script type="text/javascript">
     let menu = false;
 
+    setTimeout(function () {
+      document.querySelector('main').style.opacity = "1";
+      document.querySelector('footer').style.opacity = "1";
+    }, 150);
 
     function menuswitch() {
       if (menu) {
@@ -147,6 +152,7 @@
         document.querySelector('header > div > span:nth-child(3)').style.background = "black";
         document.querySelector('header > div > span:nth-child(4)').style.background = "black";
         document.querySelector('main').style.opacity = "0";
+        document.querySelector('footer').style.opacity = "0";
       }
       setTimeout(function() {
         window.location.href = link;

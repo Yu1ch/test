@@ -15,6 +15,12 @@
       background: black;
     }
 
+    main,
+    footer {
+      transition: opacity .5s;
+      opacity: 0;
+    }
+
     header>div#togglemenu>span {
       background: white;
     }
@@ -133,6 +139,10 @@
   <script type="text/javascript">
     let menu = false;
 
+    setTimeout(function () {
+      document.querySelector('main').style.opacity = "1";
+      document.querySelector('footer').style.opacity = "1";
+    }, 150);
 
     function menuswitch() {
       if (menu) {
