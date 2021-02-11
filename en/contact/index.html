@@ -7,7 +7,7 @@
   <meta name="keywords" content="hygge, internet addiction, digital detox, smartphone addiction, internet, smartphones, addiction">
   <meta name="description" content="Kur Med Alle is a website run by two high school students based in Japan, focusing on the Danish lifestyle Hygge as a cure to internet addiction.">
   <meta name="author" content="Kur Med Alle">
-  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="../logo.ico">
   <link rel="stylesheet" href="../../common.css">
   <title>Contact | Kur Med Alle</title>
   <style>
@@ -46,13 +46,21 @@
 <body>
   <div id="menu" onclick="menuswitch()">
     <small><span onclick="jump('../../contact')">JA</span> &nbsp;/&nbsp; <span style="opacity:.75">EN</span></small><br>
+    <span onclick="jump('../')">Home</span><br>
     <span onclick="jump('../about')">About</span><br>
-    <span onclick="jump('../archives')">Archives</span><br>
+    <span onclick="jump('../archives')" id="class">Archives</span><br>
     <span onclick="scrolltotop()">Contact</span>
+    <div>
+      <span onclick="jump('../archives/001')">Causes and Effects of Internet Addiction</span><br>
+      <span onclick="jump('../archives/002')">What is Hygge?</span><br>
+      <span onclick="jump('../archives/003')">How is Hygge Effective Against Internet Addiction?</span><br>
+      <span onclick="jump('../archives/004')">Try Hygge</span><br>
+      <span onclick="jump('../archives/005')">External Sources</span>
+    </div>
   </div>
   <header>
     <div id="logo">
-      <img src="../logo.png" alt="" onclick="jump('../')">
+      <img src="../logo.svg" alt="" onclick="jump('../')">
     </div>
     <div id="togglemenu" onclick="menuswitch()">
       <span></span>
@@ -86,6 +94,7 @@
         ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum.
       </p>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScpCt4DnOwOX4qnVvBeqlzvb3JzjdspHYYYcqn4TTC3Bb9s_A/viewform?embedded=true" width="100%" height="382" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </section>
   </main>
 
@@ -144,6 +153,7 @@
         document.querySelector('header > div > span:nth-child(2)').style.background = "white";
         document.querySelector('header > div > span:nth-child(3)').style.background = "white";
         document.querySelector('header > div > span:nth-child(4)').style.background = "white";
+        document.querySelector('header').style.opacity = "0";
         document.body.style.background = "black";
       } else {
         document.body.style.background = "white";
