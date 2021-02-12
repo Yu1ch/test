@@ -52,10 +52,10 @@
     }
 
     main>div:first-child>svg {
-      width: 100%;
-      max-width: 80vw;
-      height: auto;
-      max-height: calc(25.4vw);
+      width: 100vw;
+      max-width: 1000px;
+      height: 31.7vw;
+      max-height: 317px;
     }
 
     main>div:first-child>p {
@@ -348,7 +348,7 @@
         document.body.style.overflow = "auto";
         document.querySelector('div#menu').className = "";
         menu = false;
-        if (window.innerHeight * .75 < document.documentElement.scrollTop || document.body.scrollTop) {
+        if (document.querySelector('main > div >p').offsetTop + document.querySelector('main > div >p').offsetHeight < document.documentElement.scrollTop || document.body.scrollTop) {
           document.querySelector('header > div > span:nth-child(1)').style.background = "black";
           document.querySelector('header > div > span:nth-child(2)').style.background = "black";
           document.querySelector('header > div > span:nth-child(3)').style.background = "black";
@@ -416,7 +416,7 @@
 
     window.onscroll = function() {
       document.querySelector('main > div:first-child > span').style.opacity = 0;
-      if (window.innerHeight * .75 < document.documentElement.scrollTop || document.body.scrollTop) {
+      if (document.querySelector('main > div >p').offsetTop + document.querySelector('main > div >p').offsetHeight < document.documentElement.scrollTop || document.body.scrollTop) {
         document.body.style.background = "white";
         document.querySelector('header > div > span:nth-child(1)').style.background = "black";
         document.querySelector('header > div > span:nth-child(2)').style.background = "black";
